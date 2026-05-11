@@ -172,7 +172,7 @@ const Dashboard = () => {
       </div>
 
       {/* Quick Actions Links */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <Link to="/meals" className="group p-4 bg-orange-100 dark:bg-orange-900/40 rounded-2xl flex items-center justify-between hover:bg-orange-200 dark:hover:bg-orange-900/60 transition-colors">
           <div className="flex items-center gap-3"><Activity className="text-orange-600 dark:text-orange-400"/><span className="font-bold text-orange-900 dark:text-orange-100">Log Meal</span></div>
           <Plus className="text-orange-600 dark:text-orange-400 group-hover:scale-125 transition-transform" />
@@ -185,7 +185,11 @@ const Dashboard = () => {
           <div className="flex items-center gap-3"><Droplets className="text-cyan-600 dark:text-cyan-400"/><span className="font-bold text-cyan-900 dark:text-cyan-100">Log Water</span></div>
           <Plus className="text-cyan-600 dark:text-cyan-400 group-hover:scale-125 transition-transform" />
         </Link>
-        <Link to="/ai-suggestions" className="group p-4 bg-purple-100 dark:bg-purple-900/40 rounded-2xl flex items-center justify-between hover:bg-purple-200 dark:hover:bg-purple-900/60 transition-colors">
+        <Link to="/sleep" className="group p-4 bg-indigo-100 dark:bg-indigo-900/40 rounded-2xl flex items-center justify-between hover:bg-indigo-200 dark:hover:bg-indigo-900/60 transition-colors">
+          <div className="flex items-center gap-3"><Moon className="text-indigo-600 dark:text-indigo-400"/><span className="font-bold text-indigo-900 dark:text-indigo-100">Log Sleep</span></div>
+          <Plus className="text-indigo-600 dark:text-indigo-400 group-hover:scale-125 transition-transform" />
+        </Link>
+        <Link to="/ai-suggestions" className="group p-4 bg-purple-100 dark:bg-purple-900/40 rounded-2xl flex items-center justify-between hover:bg-purple-200 dark:hover:bg-purple-900/60 transition-colors col-span-2 md:col-span-1 lg:col-span-1">
           <div className="flex items-center gap-3"><span className="text-xl">🤖</span><span className="font-bold text-purple-900 dark:text-purple-100">AI Coach</span></div>
           <ArrowRight className="text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform" />
         </Link>
