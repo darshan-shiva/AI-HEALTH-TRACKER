@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js (Backend)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'server/package-lock.json'
+        
+    - name: Install Backend Dependencies
+      working-directory: ./server
+      run: npm install
+
+    - name: Setup Node.js (Frontend)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'client/package-lock.json'
+
+    - name: Install Frontend Dependencies
+      working-directory: ./client
+      run: npm install
+
+    - name: Build Frontend
+      working-directory: ./client
+      run: npm run build
